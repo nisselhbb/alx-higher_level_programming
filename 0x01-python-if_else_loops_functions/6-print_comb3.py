@@ -4,4 +4,4 @@ for i in range(0, 9):
         among = ", "
         if i == 8:
             among = "\n"
-            print("{:d}{:d}".format(i, j), end=among)
+        print("{:d}{:d}".format(i, j), end=among)
