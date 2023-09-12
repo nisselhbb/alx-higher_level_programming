@@ -22,7 +22,7 @@ int is_palindrome(listint_t **head)
 
 	for (a = 1; a <= num; a++)
 	{
-		for (b = a; b <= num; b++)
+		for (b = a; b < num; b++)
 		{
 			final = final->next;
 		}
