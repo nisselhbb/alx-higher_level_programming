@@ -4,7 +4,7 @@ def safe_print_list(my_list=[], x=0):
     try:
         for i in range(x):
             if x >= e:
-            print(my_list[i], end=" ")
+            print(i, end=" ")
             e += 1
         print()
         return e
