@@ -1,26 +1,37 @@
-The ``3-say_my_name`` module
+The ``0-add_integer`` module
 ======================
 
-Using ``say_my_name``
+Using ``add_integer``
 -------------------
 
 Imported the function from:
-	``say_my_name`` = __import__('3-say_my_name').``say_my_name``
-
->>>say_my_name("Nissrine")
-My name is Nissrine
+	add_integer = __import__('0-add_integer').add_integer
 
 
->>>say_my_name("Nissrine", "EL")
-My name is Nissrine EL
+>>>add_integer(2, 3)
+5
 
 
->>>say_my_name("Nissrine", 3)
+>>>add_integer(2, 10)
+12
+
+
+
+>>>add_integer(10, -2)
+8
+
+
+>>>add_integer(2, "o")
 Traceback (most recent call last):
-raise TypeError("last_name must be a string")
-TypeError: last_name must be a string
+  raise TypeError("b must be an integer")
+TypeError: b must be an integer
 
 
->>>say_my_name(1, 2)
-raise TypeError("first_name must be a string")
-TypeError: first_name must be a string
+>>>add_integer("what", 3)
+Traceback (most recent call last):
+    raise TypeError("a must be an integer")
+TypeError: a must be an integer
+
+
+>>>add_integer(6.0, 6.1)
+12
