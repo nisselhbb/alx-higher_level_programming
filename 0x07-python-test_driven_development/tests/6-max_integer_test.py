@@ -7,7 +7,7 @@ max_integer = __import__('6-max_integer').max_integer
 class TestMaxInteger(unittest.TestCase):
     def test_empty_list(self):
         """testing when the input list is empty"""
-        self.assertIsNone(max_integer([]),)
+        self.assertIsNone(max_integer([]))
 
     def test_single_element_list(self):
         """testing when the input list has a single element"""
