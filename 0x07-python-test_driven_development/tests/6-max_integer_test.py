@@ -1,52 +1,72 @@
 #!/usr/bin/python3
-"""modle unittest for the max_integer function"""
+"""Unittest max_integer([..])
+"""
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
 
 class TestMaxInteger(unittest.TestCase):
+    """unittest max_integer"""
+    def test_module_docstring(self):
+        """tests docsting"""
+        m = __import__('6-max_integer').__doc__
+        self.assertTrue(len(m) > 1)
+
+    def test_function_docstring(self):
+        """tests docstring"""
+        f = max_integer.__doc__
+        self.assertTrue(len(f) > 1)
+
     def test_empty_list(self):
-        """testing when the input list is empty"""
-        self.assertIsNone(max_integer([]))
+        """test empty list []"""
+        e = []
+        self.assertIsNone(max_integer(e))
 
-    def test_single_element_list(self):
-        """testing when the input list has a single element"""
-        self.assertEqual(max_integer([1]), 1)
+    def test_no_args(self):
+        """test arguments passed to func"""
+        self.assertIsNone(max_integer())
 
-    def test_positive_numbers(self):
-        """testing when the input list has positive numbers"""
-        self.assertEqual(max_integer([1, 20, 30, 40, 50]), 50)
+    def test_one_element(self):
+        """tests only one number in the list"""
+        o = [1]
+        self.assertEqual(max_integer(o), 1)
 
-    def test_negative_numbers(self):
-        """testing when the input list has negative numbers"""
-        self.assertEqual(max_integer([-1, -2, -3, -4, -5]), -1)
+    def test_positive_end(self):
+        """tests all positive with max at end"""
+        e = [2, 10, 8, 36, 14, 50]
+        self.assertEqual(max_integer(e), 50)
 
-    def test_mixed_numbers(self):
-        """testing when the iput list has both negative and positive numbers"""
-        self.assertEqual(max_integer([-1, 3, 7, 2, -9]), 7)
+    def test_positive_middle(self):
+        """tests all positive with max in middle"""
+        m = [2, 10, 8, 360, 14, 50]
+        self.assertEqual(max_integer(m), 360)
 
-    def test_duplicate_max(self):
-        """testing when the input list has equal integers"""
-        self.assertEqual(max_integer([7, 7, 7, 7]), 7)
+    def test_positive_beginning(self):
+        """tests all positive with max at beginning"""
+        b = [200, 10, 8, 36, 14, 50]
+        self.assertEqual(max_integer(b), 200)
 
-    def test_ints_and_floats(self):
-        """testing when the input list has integers and floats"""
-        self.assertEqual(max_integer([1.50, 20.4, -7, 10]), 20.4)
+    def test_one_negative(self):
+        """tests list with one negative number"""
+        on = [200, 10, 8, -36, 14, 50]
+        self.assertEqual(max_integer(on), 200)
 
-    def test_empty_string(self):
-        """testing when the input is an empty string"""
-        self.assertEqual(max_integer(""), None)
+    def test_all_negative(self):
+        """tests list with all negative numbers"""
+        n = [-6, -50, -75, -1, -100]
+        self.assertEqual(max_integer(n), -1)
 
-    def test_list_of_strings(self):
-        """testing when the input is list of strings"""
-        self.assertEqual(max_integer(["My", "name", "is"]), "name")
+    def test_none(self):
+        """tests passing none as argument"""
+        with self.assertRaises(TypeError):
+            max_integer(None)
 
-     def test_non_int_arg(self):
-        """testing when there is a non-int type in list"""
+    def test_non_int_arg(self):
+        """tests a non-int type in list"""
         string = [1, 2, "Hello", 4, 5]
         with self.assertRaises(TypeError):
             max_integer(string)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
