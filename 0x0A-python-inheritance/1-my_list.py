@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""defines mylist class"""
+"""defining a mylist class"""
 
 
 class MyList(list):
-    """MyList class"""
+    """MyList class that prints the list, but sorted
+        in asceding order"""
     def print_sorted(self):
-        """prints the list, but sorted (ascending sort)"""
         sorted_list = sorted(self)
         print(sorted_list)
