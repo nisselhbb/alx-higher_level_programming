@@ -4,8 +4,8 @@ class"""
 
 
 class MyList(list):
-    """the MyList class that inherits from list
-        prints the list, but sorted in an asceding order"""
+    """the MyList inheriting list,
+        prints the list sorted in an asceding order"""
     def print_sorted(self):
         sorted_list = sorted(self)
         print(sorted_list)
