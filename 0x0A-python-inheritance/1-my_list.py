@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-"""defining a class nthat inherits from another
-class"""
+"""defines mylist class"""
 
 
 class MyList(list):
-    """the MyList inheriting list,
-        prints the list sorted in an asceding order"""
+    """MyList class"""
     def print_sorted(self):
+        """prints the list, but sorted (ascending sort)"""
         sorted_list = sorted(self)
         print(sorted_list)
