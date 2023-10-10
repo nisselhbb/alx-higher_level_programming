@@ -12,10 +12,8 @@ def pascal_triangle(n):
     while len(triangle) != n:
         curr_row = triangle[-1]
         new_row = [1]
-
-    for i in range(len(curr_row) - 1):
-        new_row.append(curr_row[i] + cuur_row[i + 1])
-
-    new_row.append(1)
-    triangle.append(new_row)
+        for i in range(len(curr_row) - 1):
+            new_row.append(curr_row[i] + curr_row[i + 1])
+        new_row.append(1)
+        triangle.append(new_row)
     return triangle
