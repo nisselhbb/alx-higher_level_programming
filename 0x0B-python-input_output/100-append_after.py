@@ -5,14 +5,13 @@
 def append_after(filename="", search_string="", new_string=""):
     """ inserts a line of text to a file, after each line
         containing a specific string"""
-    with open(filename, "r", encoding="UTF-8") as f:
-        lines = f.readlines()
-        specific_string = []
+    specific_string = []
 
-        for line in lines:
+    with open(filename, "r", encoding="UTF-8") as f:
+        for line in f:
             specific_string.append(line)
             if search_string in line:
-                specific_string.append(new_string + '\n')
+                specific_string.append(new_string)
 
     with open(filename, "w", encoding="UTF-8") as f:
         f.writelines(specific_string)
