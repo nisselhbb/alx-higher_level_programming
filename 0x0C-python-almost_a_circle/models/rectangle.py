@@ -137,8 +137,9 @@ class Rectangle(Base):
             self.y = args[4]
 
     def update(self, *args, **kwargs):
+        """assigns a key/value argument to attributes"""
         if args:
-            attrs =["id", "width", "height", "x", "y"]
+            attrs = ["id", "width", "height", "x", "y"]
             for i, arg in enumerate(args):
                 setattr(self, attrs[i], arg)
         else:
